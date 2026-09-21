@@ -1,0 +1,303 @@
+/* CSS Variables & Theming */
+:root {
+  /* Backgrounds & Surfaces */
+  --bg-app: #f8f9fc; /*The Pages Base Background */
+  --bg-card: #ffffff; /*Cards, Sidebars, Models */
+  --bg-hover: #f1f5f9; /*Hover/Active Backgrounds */
+  --bg-input: #f1f5f9; /*Form Inputs */
+
+  /* Text Colors */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+
+  /* Brand Gradients & Accents */
+  --primary-gradient: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+  --story-gradient: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #bc1888);
+  --accent-pink: #e11d48;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+
+  /* Layount Tokens */
+  --sidebar-width: 280px;
+  --card-radius: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Dark Mode */
+  [data-theme="dark"] {
+    --bg-app: #0b0f17;
+    --bg-card: #151c28;
+    --bg-hover: #1e293b;
+    --bg-input: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-light: #64748b;
+    --border-color: #1e293b;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* CSS Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: var(--transition);
+  overflow-x: hidden;
+  width: 100vh;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 10px;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  height: 100vh;
+  border-right: 1px solid var(--border-color);
+  padding: clamp(20px, 2.5vw, 32px) clamp(16px, 1.8vw, 24px);
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  z-index: 100;
+  transform: var(--transitions);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(20px, 2vw, 28px);
+}
+.brand-logo i {
+  font-size: clamp(24px, 2vw, 28px);
+  color: #e1306c;
+}
+.brand-logo span {
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.user-avatar-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+.user-avatar {
+  width: clamp(70px, 6vw, 84px);
+  height: clamp(70px, 6vw, 84px);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--bg-card);
+}
+.user-name {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+.user-handle {
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 18px 0 14px;
+  padding: 0 4px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: clamp(0.875rem, 1vw, 0.95rem);
+  color: var(--text-muted);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.user-bio {
+  font-size: clamp(0.75rem, 0.85vw, 0.825rem);
+  color: var(--text-muted);
+  line-height: 1.45;
+  max-width: 230px;
+}
+
+.highlights-section {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.highlights-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.highlights-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.highlights-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  padding: 2px;
+  background: var(--bg-hover);
+  transition: var(--transition);
+}
+
+.highlights-item:hover .highlights-ring {
+  border-color: var(--text-muted);
+  transform: scale(1.05);
+}
+
+.highlights-add {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.highlights-label {
+  font-size: clamp(0.65rem, 0.75vw, 0.75rem);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.highlights-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+  flex-grow: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  font-size: 600;
+  font-size: clamp(0.85rem, 0.95vw, 0.925rem);
+  transform: var(--transition);
+}
+
+.nav-item i {
+  font-size: clamp(20px, 1.5vw, 22px);
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: var(--bg-hover);
+  color: var(--text-main);
+}
+.nav-item.active {
+  font-weight: 700;
+}
+.nav-item.active i {
+  color: #e1306c;
+}
+
+.main-content {
+  padding: clamp(16px, 2.2vw, 36px);
+  overflow-y: auto;
+  width: 100%;
+}
+
+.mobile-top-header,
+.mobile-bottom nav {
+  display: none;
+}

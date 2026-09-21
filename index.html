@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Clone Website</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.fstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Main Content -->
+    <!-- App Shell -->
+    <div class="app-container">
+      <aside class="sidebar">
+        <a href="#" class="brand-logo">
+          <i class="ph-bold ph-instagram-logo"></i>
+          <span>Instadumb</span>
+        </a>
+        <div class="user-profile-card">
+          <div class="user-avatar-wrapper">
+            <img src="./assets/images/profile_pic.png" class="user-avatar" />
+          </div>
+          <h2 class="user-name">Kevin Everrett</h2>
+          <span class="user-handle">@keverrett1989</span>
+          <div class="profile-stats">
+            <div class="stat-item">
+              <span class="stat-value">6789</span>
+              <span class="stat-label">Posts</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">6,789,908</span>
+              <span class="stat-label">Friends</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">89</span>
+              <span class="stat-label">Following</span>
+            </div>
+          </div>
+          <p class="user-bio">
+            Kevin Everrett is a world class FullStack Developer.
+          </p>
+        </div>
+        <div class="highlights-section">
+          <h3 class="highlights-title">Story Highlights</h3>
+          <div class="highlights-container">
+            <div class="highlights-item">
+              <div class="highlights-ring">
+                <i class="ph ph-plus highlight-add"></i>
+              </div>
+              <span class="highlights-label">New</span>
+            </div>
+            <div class="highlights-item">
+              <div class="highlights-ring">
+                <img
+                  src="./assets/images/story_pic1.png"
+                  class="highlights-img" />
+              </div>
+              <span class="highlights-label">Techniques</span>
+            </div>
+            <div class="highlights-item">
+              <div class="highlights-ring">
+                <img
+                  src="./assets/images/story_pic2.png"
+                  class="highlights-img" />
+              </div>
+              <span class="highlights-label">PowerLvl</span>
+            </div>
+            <div class="highlights-item">
+              <div class="highlights-ring">
+                <img
+                  src="./assets/images/story_pic3.png"
+                  class="highlights-img" />
+              </div>
+              <span class="highlights-label">Saiyans</span>
+            </div>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="#" class="nav-item active">
+            <i class="ph-fill ph-house"></i>
+            <span>Feed</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph-fill ph-compass"></i>
+            <span>Explore</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph-fill ph-film-strip"></i>
+            <span>Reels</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph-fill ph-gear"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph-fill ph-sign-out"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <div class="mobile-top-header">
+          <button class="mobile-action-btn">
+            <i class="ph-bold ph-plus"></i>
+          </button>
+          <div class="mobile-logo">Instadumb</div>
+          <button class="mobile-btn-action" id="mobileThemeToggleBtn">
+            <i class="ph ph-moon" id="mobileThemeIcon"></i>
+          </button>
+        </div>
+        <header class="top-header">
+          <div class="search-box">
+            <i class="ph ph-magnifying-glass"></i>
+            <input
+              type="text"
+              class="search-input"
+              id="search-input"
+              placeholder="Search fighters, legends and powerLvls...." />
+          </div>
+        </header>
+      </main>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
